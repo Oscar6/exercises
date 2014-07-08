@@ -1,0 +1,48 @@
+<html>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+
+/**
+ * @exercise 1 - lifeLine
+ * @description takes children, partner's name, hometown, and job
+ * @returns 'You are a W from X and married to Y  with Z kids.'
+**/
+
+// Create function with name tellFortune and appropriate parameters
+
+// Take 4 arguments: number of children, partner's name, hometown, job title.
+		var lifeLine = function( jobTitle, hometown, partner, children ) {
+
+  // Get first letter and mkake it lowercase
+  		var firstLetter = jobTitle.charAt(0).toLowerCase();
+
+  // Check if first letter of jobTitle is a, e, i, o, or u
+  		 if(firstLetter === 'a' 
+  			firstLetter === 'e'
+  			firstLetter === 'i'
+  			firstLetter === 'o'
+  			firstLetter === 'u') {
+
+  //Do
+		var a = 'an ';
+  	} else {
+  		var a = 'a ';
+  	}
+  		console.log(firstLetter);
+
+  // Define string variable that will have that output
+ 		var whateverYouWant = "You are a " + jobTitle + " from " + hometown + " and married to " + partner + " with " + children + " kids."
+ 
+  // Return that string
+  		console.log(whateverYouWant);
+
+  		return whateverYouWant;
+	};
+
+console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq with 3 kids.'); 
+console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling  with 3000 kids.');
+console.assert(lifeLine('Elvis impersonator', 'Russia', 'The Oatmeal', 0) === 'You are a Elvis impersonator from Russia and married to The Oatmeal with 0 kids.'); 
+		</script>
+	</body>
+</html>
