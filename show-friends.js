@@ -1,23 +1,54 @@
-	// Add the names of everyone at your table   
-	var friends = ['Alex', 'Elyse', 'Mae', 'Sartaj'];
+// Add the names of everyone at your table   
+var friends = [];
 
-	var list = "<ul>"
+var createList = function() {
+	var list = ""
 
-	// Create your for loop here
-	// HINT: the string should 
-	// look like '<li>' + friends[x] + "</li>" + ....
-
-	for(var i = 0; i < friends.length; i ++) {
-  		list += "<li>"+ friends[i] + "</li>";
-
+	for(var i  = 0; i < friends.length; i += 1) {
+		list = list + '<li>' + friends[i] + 
+		'<button data-id="' + i + '">remove</button></li>'
 	}
 
-	list = list + '</ul>'
-	
-	console.log(list);
-	console.log('body');
 
-	// Use jQuery to select the body tag on the index and 
-	// append the finish table string
-	$("body").append(list);
+	$("ul").html(list);
+}
+
+createList();
+
+var addFriend = function(name) {
+	friends.push(name); 
+	createList();
+}
+
+var removeFriend = function(index) {
+	// console.log(index);
+	friends.splice(index, 1);
+	createList();
+}
+	
+
+$("body").on('click', 'button', function(){
+	if ($(this).hasClass('add')) {
+		addFriend($("input").val());
+		$("input").val("")
+	} else {
+		removeFriend($(this).attr("data-id"));
+	}
+		
+
+});
+
+// $(".remove").click(function(){
+	// console.log("here");
+	// 
+// });
+
+
+
+
+
+
+// Use jQuery to select the body tag on 
+//the index and append the finish table string
+
 
